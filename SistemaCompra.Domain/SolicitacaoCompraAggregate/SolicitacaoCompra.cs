@@ -38,15 +38,14 @@ namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
 
         public void ValidarExisteItens(IEnumerable<Item> itens)
         {
-            if (itens.Count() < Produto.MIN_UNIDADES_ITEM) throw new BusinessRuleException($"A solicitação de compra deve possuir ao menos 1 item!");
+            if (itens.Count() < Produto.MIN_UNIDADES_ITEM) throw new BusinessRuleException($"A solicitação de compra deve possuir itens!");
         }
 
         public void RegistrarCompra(IEnumerable<Item> itens)
         {
             ValidarExisteItens(itens);
-            var t = itens.Select(x => x.Subtotal.Value);
             CalcularValorTotal(itens);
-            CondicaoPagamento = ValidarCondicaoPagamento(TotalGeral);
+            ValidarCondicaoPagamento(TotalGeral);
             AddEvent(new CompraRegistradaEvent(Id, itens, TotalGeral.Value));
         }
 
@@ -60,13 +59,13 @@ namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
 
         public CondicaoPagamento ValidarCondicaoPagamento(Money totalGeral)
         {
-            if (totalGeral.Value < 50000) return new CondicaoPagamento(0);
+            if (totalGeral.Value < 50000) return CondicaoPagamento = new CondicaoPagamento(0);
 
-            if (totalGeral.Value > 50000 && totalGeral.Value < 99999) return new CondicaoPagamento(30);
+            if (totalGeral.Value > 50000 && totalGeral.Value < 99999) return CondicaoPagamento = new CondicaoPagamento(30);
 
-            if (totalGeral.Value > 100000 && totalGeral.Value < 199999) return new CondicaoPagamento(60);
+            if (totalGeral.Value > 100000 && totalGeral.Value < 199999) return CondicaoPagamento = new CondicaoPagamento(60);
 
-            if (totalGeral.Value > 200000) return new CondicaoPagamento(90);
+            if (totalGeral.Value > 200000) return CondicaoPagamento = new CondicaoPagamento(90);
 
             return new CondicaoPagamento(0);
         }

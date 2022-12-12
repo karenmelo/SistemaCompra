@@ -2,7 +2,6 @@
 using SistemaCompra.Domain.Core.Model;
 using SistemaCompra.Domain.ProdutoAggregate.Events;
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaCompra.Domain.ProdutoAggregate
 {
@@ -11,8 +10,6 @@ namespace SistemaCompra.Domain.ProdutoAggregate
         public static int MIN_UNIDADES_ITEM => 1;
 
         public Categoria Categoria { get; private set; }
-
-        [NotMapped]
         public Money Preco { get; set; }
         public string Descricao { get; private set; }
         public string Nome { get; private set; }

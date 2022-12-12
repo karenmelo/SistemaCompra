@@ -17,7 +17,8 @@ namespace SistemaCompra.Infra.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Não achei solução para fazer isso funcionar, tentei NotMapped, OwnsOne, etc.
+            //Não achei solução para fazer isso funcionar, tentei NotMapped, OwnsOne, etc. 
+            //Pela pesquisa que fiz EF não da suporte a esse tipo de implementação
             //modelBuilder.Entity<ProdutoAgg.Produto>()
             // .HasData(new ProdutoAgg.Produto("Produto01", "Descricao01", "Madeira", 100)
             // );
