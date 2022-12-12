@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "42e1xc+g8wki5UfgFwI5P7jQt9XZVMB88us29hERrVA07gE+V3bZl5RVaqEA+tDwEKm7w0gqZ6+BWhcow/ETTA==",
+  "success": true,
+  "projectFilePath": "E:\\Testes\\Triscal\\SistemaCompras-v3\\SistemaCompras-v3\\SistemaCompra.Domain\\SistemaCompra.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Karen\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
+    "C:\\Users\\Karen\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.1\\microsoft.entityframeworkcore.abstractions.3.1.1.nupkg.sha512",
+    "C:\\Users\\Karen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Karen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Karen\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
